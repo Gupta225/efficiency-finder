@@ -1,0 +1,58 @@
+<html>
+        <script type="text/javascript">
+            function efficiency()
+            {
+                var v2=prompt("enter secondary terminal voltage");
+                var v2=parseInt(v2,10);
+                var i2=prompt("enter full load secondary current");
+                var i2=parseInt(i2,10);
+                var pf=prompt("enter power factor");
+                var pf=parseFloat(pf,10);
+                if(pf>1)
+                {
+                    document.write("power factor value sholud be less than or equal to 1");
+                    kill;
+                }
+                var pi=prompt("enter iron lost");
+                var pi=parseInt(pi,10);
+                var pc=prompt("enter full load copper loss");
+                var pc=parseInt(pc,10);
+                if(v2==0||i2==0||pf==0)
+                {
+                    if(pi==0&&pc==0)
+                    {
+                        document.write("enter valid values");
+                        kill;
+                    }
+                }
+                var e=(v2*i2*pf)/((v2*i2*pf)+pi+pc);
+                prompt("efficeincy is ",e)
+            }
+    
+        </script>
+        <head>
+            <style>
+                    button.a
+                    {
+                        position: relative;
+                        left: 558px;
+                        top:325px;
+                        width: 250px;;
+                        height: 50px;
+                        background-color:dda15e;
+                        border-color:dda15e;
+                        color:black;
+                        border-radius: 50px;
+                    }
+                    body{
+                            background-image: url('https://www.tempoautomation.com/wp-content/uploads/2020/01/47077108_s.jpg');
+                    }
+                    button:hover
+                    {
+                            font-size: 105%;
+                    }
+            </style>
+        </head>
+            <body>
+                    <button class="a" onclick="efficiency()"><b><i>Click here to find efficiency</i></b></button>
+            </body>
